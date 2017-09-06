@@ -1,6 +1,21 @@
-let toBeCounted = "lighthouse in the house"
-toBeCounted = toBeCounted.split(" ").join("")
+Object.size = function(obj) {
+	var size = 0;
+	for(key in obj) {
+		if(obj.hasOwnProperty(key)) size++;
+	}
+	return size;
+}
 
-console.log(toBeCounted);
 
-// const countLetters = function()
+var str = 'lighthouseinthehouse';
+var letters = new Object;
+
+
+for(x = 0, length = str.length; x < length; x++) {
+	var l = str.charAt(x)
+	letters[l] = (isNaN(letters[l]) ? 1 : letters[l] + 1);
+}
+
+for(key in letters) {
+	console.log(key + ': ' + letters[key]);
+}
